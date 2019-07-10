@@ -5,7 +5,7 @@
         <span>23.</span>
         <span class="font-weight-light">STOPWATCH</span>
       </v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-btn
         flat
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
@@ -18,32 +18,90 @@
     <v-content>
       <!-- <HelloWorld/> -->
 
-       <v-container grid-list-md text-xs-center>
-        <v-layout align-center justify-center row fill-height>
+      <v-container
+        grid-list-md
+        text-xs-center
+      >
+        <v-layout
+          align-center
+          justify-center
+          row
+          fill-height
+        >
           <v-flex xs2>
-            <v-card dark color="yellow">
-              <v-card-text class="display-4 font-weight-bold">00</v-card-text>
+            <v-card
+              dark
+              color="yellow"
+            >
+              <v-card-text class="display-4 font-weight-bold">
+                00
+              </v-card-text>
             </v-card>
           </v-flex>
 
           <v-flex xs2>
-            <v-card dark color="amber">
-              <v-card-text class="display-4 font-weight-bold">00</v-card-text>
+            <v-card
+              dark
+              color="amber"
+            >
+              <v-card-text class="display-4 font-weight-bold">
+                00
+              </v-card-text>
             </v-card>
           </v-flex>
 
           <v-flex xs2>
-            <v-card dark color="orange">
-              <v-card-text class="display-4 font-weight-bold">00</v-card-text>
+            <v-card
+              dark
+              color="orange"
+            >
+              <v-card-text class="display-4 font-weight-bold">
+                00
+              </v-card-text>
             </v-card>
           </v-flex>
         </v-layout>
-       </v-container>
+
+        <v-layout
+          row
+          wrap
+          justify-center
+          align-center
+        >
+          <v-flex xs2>
+            <v-card
+              color="amber"
+            />
+          </v-flex>
+
+          <v-flex xs2>
+            <v-card
+              color="amber"
+            />
+          </v-flex>
+
+          <v-flex xs2>
+            <v-radio-group v-model="radioGroup">
+              <v-radio
+                v-for="(n, item) in ['freeeeze', 'normal speed', 'speeeedy']"
+                :key="n"
+                :label="`Radio - ${item}`"
+                :value="n"
+              />
+            </v-radio-group>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-content>
 
-    <v-footer app class="pa-3">
-      <v-spacer></v-spacer>
-      <div class="caption">&copy; <a href="https://ma23.ru">Dmitriy Maziuk</a> {{ new Date().getFullYear() }}</div>
+    <v-footer
+      app
+      class="pa-3"
+    >
+      <v-spacer />
+      <div class="caption">
+        &copy; <a href="https://ma23.ru">Dmitriy Maziuk</a> {{ new Date().getFullYear() }}
+      </div>
     </v-footer>
   </v-app>
 </template>
@@ -57,6 +115,7 @@ export default {
   data: () => ({
     sec: 0,
     ms: 10,
+    radioGroup: 1,
   }),
 
   mounted () {
